@@ -14,6 +14,7 @@ namespace ExtremeTempDrop
             Settings.instance.AddToModSettings("Extreme Temp Drop");
         }
     }
+    // moved to separate classes so other mods can use it in same way as deprecated from vanilla GetOutdoorTempDropCelcius()
     public class Common
     {
         // return positive number of how many deg temp should be reduced

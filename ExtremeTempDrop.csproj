@@ -13,12 +13,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="STBlade.Modding.TLD.Il2CppAssemblies.Windows" Version="2.10.0" />
+    <PackageReference Include="STBlade.Modding.TLD.Il2CppAssemblies.Windows" Version="2.36.0" />
     <PackageReference Include="STBlade.Modding.TLD.ModSettings" Version="1.9.0" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /y &quot;$(BaseOutputPath)\$(Configuration)\net6.0\ExtremeTempDrop.dll&quot; &quot;$(TheLongDarkPath)\Mods&quot;" />
-  </Target>
-
+  <PropertyGroup>
+    <PostBuildEvent>cp ExtremeTempDrop.dll "/mnt/steam/SteamLibrary/steamapps/common/TheLongDark/Mods/"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
